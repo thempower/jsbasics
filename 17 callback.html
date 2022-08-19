@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=scr, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function test1(){
+
+
+        }
+
+        let test2 = function (){
+//funkcja anonimowa bo nie ma nazwy przypisania
+        }
+
+        test2();
+
+        function test3(a, callback){
+            console.log("test3:", a);
+            callback(a);
+        }
+        function test4(arg){
+            console.log("test 4 arg:", arg);
+
+        }
+
+        test3(12, test4);
+
+        //drugi przykład
+
+        function ok(num){
+            console.log("liczba dodatnia > 0, num:", num);
+
+        }
+
+        function err(num){
+
+            console.log("liczba ujemna < 0, num:", num);
+
+        }
+
+        if(num >= 0){
+
+            ok(num);
+        }else {
+            err(num);
+        }
+
+    </script>
+</body>
+</html>

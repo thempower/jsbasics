@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #calc {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap:10px;
+            max-width: 750px;
+            text-align: right;
+           
+            
+
+        }
+        .result{
+            font-weight: bold;
+
+        } 
+        button#calculate{
+
+           position:relative;
+           width:100px;
+
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="calc">
+        <label for="">Kapitał</label>
+        <input type="text" id="capital" value="1000">
+
+        <label for="">Oprocentowanie</label>
+        <input type="text" id="rate" value="">
+
+        <label for="">kapitalizacja co ile miesiecy?</label>
+        <input type="text" id="n" value="">
+
+        <label for="">na ile lat lokata?</label>
+        <input type="text" id="t" value="">
+
+        <label for="" class="result">Kwota którą otrzymamy po upływie danego okresu</label>
+        <input type="text" id="result-value" value="">
+
+        <button id="calculate">Oblicz</button>
+
+    </div>
+    <script>
+        const inputCapital = document.getElementById("capital");
+        const inputRate = document.getElementById("rate");
+        const inputN = document.getElementById("n");
+        const inputT = document.getElementById("t");
+        const inputT = document.getElementById("t");
+        const inputResultValue = document.getElementById("result-value");
+
+        // capital * Math.pow( (1+(0.04/12)) , (12 * 5) )
+        let capital = inputCapital.value;
+        let rate = inputRate.value;
+        let n = inputN.value;
+        let t = inputT.value;
+
+
+        let finalMoney = capital * Math.pow( (1 +(rate/n)), n * t );
+        console.log(Math.floor(finalMoney));
+        console.log(Math.ceil(finalMoney));
+    </script>
+</body>
+</html>
